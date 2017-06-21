@@ -88,12 +88,13 @@ class TestRobot < MiniTest::Test
   end
 
   def test_workday_not_day_off_returns_false
-    skip
     # arrange
-
+    robot = Robot.new
+      robot.day_off = "Wednesday"
     # act
-
+    work_today = robot.workday?("Wednesday")
     # assert
+    assert_equal(work_today, false)
   end
 
 end
