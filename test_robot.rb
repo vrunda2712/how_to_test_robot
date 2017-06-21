@@ -49,12 +49,12 @@ class TestRobot < MiniTest::Test
   end
 
   def test_that_robot_in_good_condition_sent_to_station_4
-    skip
     # arrange
-
+    robot = Robot.new
     # act
-
+    sent_to_4 = robot.station
     # assert
+    assert_equal(sent_to_4, 4)
   end
 
   def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
