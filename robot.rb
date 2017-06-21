@@ -4,7 +4,7 @@ class Robot
   def station
     if needs_repairs && foreign_model
       return 1
-    elsif needs_repairs && vintage_model 
+    elsif needs_repairs && vintage_model
       return 2
     elsif needs_repairs
       return 3
@@ -15,7 +15,7 @@ class Robot
 
   def prioritize_tasks
     if todos.empty?
-      return -1 
+      return -1
     else
       return todos.max
     end
@@ -24,5 +24,4 @@ class Robot
   def workday?(today)
     today != day_off
   end
-
 end
