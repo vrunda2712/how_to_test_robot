@@ -7,9 +7,9 @@ class TestRobot < MiniTest::Test
   def test_that_foreign_vintage_robot_needing_repairs_sent_to_station_1
     # arrange
     robot = Robot.new
-      robot.needs_repairs = 1
-      robot.foreign_model = 1
-      robot.vintage_model = 1
+      robot.needs_repairs = true
+      robot.foreign_model = true
+      robot.vintage_model = true
     # act
     sent_to_1 = robot.station
     # assert
@@ -19,8 +19,8 @@ class TestRobot < MiniTest::Test
   def test_that_foreign_robot_neeing_repairs_sent_to_station_1
     # arrange
     robot = Robot.new
-      robot.needs_repairs = 1
-      robot.foreign_model = 1
+      robot.needs_repairs = true
+      robot.foreign_model = true
     # act
     sent_to_1 = robot.station
     # assert
@@ -30,8 +30,8 @@ class TestRobot < MiniTest::Test
   def test_that_vintage_robot_needing_repairs_sent_to_station_2
     # arrange
     robot = Robot.new
-      robot.needs_repairs = 1
-      robot.vintage_model = 1
+      robot.needs_repairs = true
+      robot.vintage_model = true
     # act
     sent_to_2 = robot.station
     # assert
@@ -41,7 +41,7 @@ class TestRobot < MiniTest::Test
   def test_that_standard_robot_needing_repairs_sent_to_station_3
     # arrange
     robot = Robot.new
-      robot.needs_repairs = 1
+      robot.needs_repairs = true
     # act
     sent_to_3 = robot.station
     # assert
@@ -70,7 +70,7 @@ class TestRobot < MiniTest::Test
   def test_prioritize_tasks_with_todos_returns_max_todo_value
     # arrange
     robot = Robot.new
-      robot.todos = [1, 2, 3]
+      robot.todos = [1, 2, 3] # can be string as well
     # act
     max_todo = robot.prioritize_tasks
     # assert
